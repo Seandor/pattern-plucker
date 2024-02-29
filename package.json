@@ -1,0 +1,48 @@
+{
+  "name": "patternplucker",
+  "displayName": "PatternPlucker",
+  "description": "\"PatternPlucker\" is a versatile and powerful Visual Studio Code extension designed for developers, content creators, and anyone in need of meticulously searching and extracting strings that match a specific pattern within their files. This tool is especially valuable for those working on localization, documentation, or any project where identifying and collecting pattern-wrapped strings is crucial.",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.86.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [],
+  "main": "./extension.js",
+  "contributes": {
+    "commands": [{
+      "command": "patternplucker.exeute",
+      "title": "Start Pluck Strings"
+    }],
+    "menus": {
+      "explorer/context": [
+        {
+          "command": "patternplucker.exeute"
+        }
+      ],
+      "editor/title/context": [
+        {
+          "command": "patternplucker.exeute"
+        }
+      ]
+    }
+  },
+  "scripts": {
+    "lint": "eslint .",
+    "pretest": "pnpm run lint",
+    "test": "vscode-test",
+    "package": "pnpm vsce package --no-dependencies",
+    "publish": "pnpm vsce publish --no-dependencies"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.86.0",
+    "@types/mocha": "^10.0.6",
+    "@types/node": "18.x",
+    "eslint": "^8.56.0",
+    "typescript": "^5.3.3",
+    "@vscode/test-cli": "^0.0.6",
+    "@vscode/test-electron": "^2.3.9"
+  }
+}
